@@ -1,14 +1,14 @@
 package com.rubberydev.rick_and_morty
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import com.rubberydev.rick_and_morty.model.Character
+
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rubberydev.rick_and_morty.databinding.ViewCharacterItemBinding
-import com.rubberydev.rick_and_morty.model.Character
 
-class CharactersAdapter(val characters : List<Character>,
+class CharactersAdapter(var characters : List<com.rubberydev.rick_and_morty.model.Character>,
                          private val characterClickedListener: (Character) -> Unit
                        ) :
     RecyclerView.Adapter<CharactersAdapter.ViewHolder>() {
@@ -34,10 +34,10 @@ class CharactersAdapter(val characters : List<Character>,
 
      class ViewHolder(private val binding: ViewCharacterItemBinding): RecyclerView.ViewHolder(binding.root){
          fun bind(character: Character){
-            binding.title.text = character.title
+            binding.title.text = character.name
              Glide
                  .with(binding.root.context)
-                 .load(character.cover)
+                 .load(character.image)
                  .into(binding.cover)
          }
      }
