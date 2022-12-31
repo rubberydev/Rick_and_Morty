@@ -1,5 +1,6 @@
 package com.rubberydev.rick_and_morty
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -8,6 +9,7 @@ import com.rubberydev.rick_and_morty.databinding.ActivityMainBinding
 import com.rubberydev.rick_and_morty.model.CharacterDbClient
 import com.rubberydev.rick_and_morty.model.TheCharacterDbService
 import kotlinx.coroutines.launch
+import com.rubberydev.rick_and_morty.model.Character
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,9 +18,7 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val charactersAdapter = CharactersAdapter(emptyList()){ character ->
-            Toast.makeText(this@MainActivity, "",Toast.LENGTH_SHORT).show()
-        }
+        val charactersAdapter = CharactersAdapter(emptyList()){ navigateTo(it) }
 
         binding.recycler.adapter = charactersAdapter
         lifecycleScope.launch {
@@ -27,5 +27,12 @@ class MainActivity : AppCompatActivity() {
             charactersAdapter.notifyDataSetChanged()
 
         }
+    }
+
+    private fun navigateTo(it: Character) {
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra(DetailActivity.EXTRA_TITLE, it.name)
+        startActivity(intent)
+
     }
 }

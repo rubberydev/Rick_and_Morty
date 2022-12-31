@@ -1,6 +1,10 @@
 package com.rubberydev.rick_and_morty.model
 
-data class Character(
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+
+class Character(
     val created: String,
     val episode: List<String>,
     val gender: String,
@@ -13,4 +17,5 @@ data class Character(
     val status: String,
     val type: String,
     val url: String
+
 )
