@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.rubberydev.rick_and_morty.databinding.ViewCharacterItemBinding
 import com.rubberydev.rick_and_morty.model.Character
 
@@ -29,6 +30,10 @@ class CharactersAdapter(val characters : List<Character>) : RecyclerView.Adapter
      class ViewHolder(private val binding: ViewCharacterItemBinding): RecyclerView.ViewHolder(binding.root){
          fun bind(character: Character){
             binding.title.text = character.title
+             Glide
+                 .with(binding.root.context)
+                 .load(character.cover)
+                 .into(binding.cover)
          }
      }
 

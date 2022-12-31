@@ -14,12 +14,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.recycler.adapter = CharactersAdapter(
             listOf(
-                Character("character 1", "url 1"),
-                Character("character 2", "url 2"),
-                Character("character 3", "url 3"),
-                Character("character 4", "url 4"),
-                Character("character 5", "url 5"),
-                Character("character 6", "url 6")
+                Character("character 1", "https://rickandmortyapi.com/api/character/avatar/1.jpeg"),
+                Character("character 2", "https://rickandmortyapi.com/api/character/avatar/2.jpeg"),
+                Character("character 3", "https://rickandmortyapi.com/api/character/avatar/3.jpeg"),
+                Character("character 4", "https://rickandmortyapi.com/api/character/avatar/4.jpeg"),
+                Character("character 5", "https://rickandmortyapi.com/api/character/avatar/5.jpeg"),
+                Character("character 6", "https://rickandmortyapi.com/api/character/avatar/6.jpeg")
             )
 
         )
