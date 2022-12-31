@@ -2,6 +2,7 @@ package com.rubberydev.rick_and_morty
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.rubberydev.rick_and_morty.databinding.ActivityMainBinding
 import com.rubberydev.rick_and_morty.model.Character
 
@@ -11,6 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        /*val charactersAdapter = CharactersAdapter(emptyList()){ character ->
+            Toast.makeText(this@MainActivity, "",Toast.LENGTH_SHORT).show()
+        }*/
 
         binding.recycler.adapter = CharactersAdapter(
             listOf(
@@ -22,6 +27,9 @@ class MainActivity : AppCompatActivity() {
                 Character("character 6", "https://rickandmortyapi.com/api/character/avatar/6.jpeg")
             )
 
-        )
+        ) { character ->
+        Toast.makeText(this@MainActivity, character.title, Toast.LENGTH_SHORT).show()
+        }
+        //binding.recycler.adapter = charactersAdapter
     }
 }

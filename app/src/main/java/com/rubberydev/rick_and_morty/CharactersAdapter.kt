@@ -8,7 +8,10 @@ import com.bumptech.glide.Glide
 import com.rubberydev.rick_and_morty.databinding.ViewCharacterItemBinding
 import com.rubberydev.rick_and_morty.model.Character
 
-class CharactersAdapter(val characters : List<Character>) : RecyclerView.Adapter<CharactersAdapter.ViewHolder>() {
+class CharactersAdapter(val characters : List<Character>,
+                         private val characterClickedListener: (Character) -> Unit
+                       ) :
+    RecyclerView.Adapter<CharactersAdapter.ViewHolder>() {
 
 
 
@@ -22,7 +25,9 @@ class CharactersAdapter(val characters : List<Character>) : RecyclerView.Adapter
         }
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            holder.bind(characters[position])
+            val character = characters[position]
+            holder.bind(character)
+            holder.itemView.setOnClickListener { characterClickedListener(character) }
         }
 
         override fun getItemCount() = characters.size
