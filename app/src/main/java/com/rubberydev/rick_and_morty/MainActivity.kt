@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateTo(it: Character) {
         val intent = Intent(this, DetailActivity::class.java)
-        intent.putExtra(DetailActivity.EXTRA_TITLE, it.name)
+        intent.putExtra(DetailActivity.EXTRA_CHARACTER, it)
         startActivity(intent)
 
     }

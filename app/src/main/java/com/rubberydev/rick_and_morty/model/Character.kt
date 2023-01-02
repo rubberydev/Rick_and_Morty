@@ -3,7 +3,7 @@ package com.rubberydev.rick_and_morty.model
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
-
+@Parcelize
 class Character(
     val created: String,
     val episode: List<String>,
@@ -18,4 +18,4 @@ class Character(
     val type: String,
     val url: String
 
-)
+) : Parcelable
