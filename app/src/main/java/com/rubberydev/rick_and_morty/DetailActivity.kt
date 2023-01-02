@@ -21,7 +21,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val character = intent.getParcelableExtra<Character>(EXTRA_CHARACTER)
-        binding.title.text = character?.name
+        title = character?.name
         Glide
             .with(this)
             .load(character?.image)
