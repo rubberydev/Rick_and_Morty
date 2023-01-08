@@ -53,6 +53,42 @@ class DetailActivity : AppCompatActivity() {
 
                  bold { append("Created: ") }
                  appendLine(character?.created)
+
+                bold { append("Status: ") }
+                appendLine(character?.status)
+
+                bold { append("Specie: ") }
+                appendLine(character?.species)
+
+                bold { append("Gender: ") }
+                appendLine(character?.gender)
+
+                bold { append("Origin name: ") }
+                appendLine(character?.origin?.name)
+
+                bold { append("Location name: ") }
+                appendLine(character?.location?.name)
+
+                bold { append("Created: ") }
+                appendLine(character?.created)
+
+                bold { append("Status: ") }
+                appendLine(character?.status)
+
+                bold { append("Specie: ") }
+                appendLine(character?.species)
+
+                bold { append("Gender: ") }
+                appendLine(character?.gender)
+
+                bold { append("Origin name: ") }
+                appendLine(character?.origin?.name)
+
+                bold { append("Location name: ") }
+                appendLine(character?.location?.name)
+
+                bold { append("Created: ") }
+                appendLine(character?.created)
         }
     }
 
