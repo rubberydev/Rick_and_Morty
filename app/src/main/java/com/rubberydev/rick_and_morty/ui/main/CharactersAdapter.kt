@@ -1,4 +1,4 @@
-package com.rubberydev.rick_and_morty
+package com.rubberydev.rick_and_morty.ui.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

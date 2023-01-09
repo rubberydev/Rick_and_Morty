@@ -1,4 +1,4 @@
-package com.rubberydev.rick_and_morty
+package com.rubberydev.rick_and_morty.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

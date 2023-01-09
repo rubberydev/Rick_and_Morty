@@ -7,11 +7,12 @@
     android:orientation="vertical"
     android:padding="2dp">
 
-    <ImageView
+    <com.rubberydev.rick_and_morty.ui.common.AspectRatioImageView
         android:id="@+id/cover"
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:scaleType="centerCrop"
+        app:ratio="1.5"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
