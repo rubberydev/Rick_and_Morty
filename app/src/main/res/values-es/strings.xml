@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rick y Morty</string>
+    <string name="status">Estado</string>
+    <string name="specie">Especie</string>
+    <string name="gender">Genero</string>
+    <string name="origin_name">Nombre del origen</string>
+    <string name="location_name">Nombre de la locacion</string>
+    <string name="created">Creado</string>
+</resources>

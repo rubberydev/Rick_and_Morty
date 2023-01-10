@@ -2,10 +2,12 @@ package com.rubberydev.rick_and_morty.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableStringBuilder
 import android.widget.TextView
 import androidx.core.text.bold
 import androidx.core.text.buildSpannedString
 import com.bumptech.glide.Glide
+import com.rubberydev.rick_and_morty.R
 import com.rubberydev.rick_and_morty.databinding.ActivityDetailBinding
 import com.rubberydev.rick_and_morty.model.Character
 
@@ -36,61 +38,18 @@ class DetailActivity : AppCompatActivity() {
      private fun paintMoreInfoDetail(detailInfo: TextView,character: Character?) {
 
         detailInfo.text = buildSpannedString {
-                 bold { append("Status: ") }
-                 appendLine(character?.status)
-
-                 bold { append("Specie: ") }
-                 appendLine(character?.species)
-
-                 bold { append("Gender: ") }
-                 appendLine(character?.gender)
-
-                 bold { append("Origin name: ") }
-                 appendLine(character?.origin?.name)
-
-                 bold { append("Location name: ") }
-                 appendLine(character?.location?.name)
-
-                 bold { append("Created: ") }
-                 appendLine(character?.created)
-
-                bold { append("Status: ") }
-                appendLine(character?.status)
-
-                bold { append("Specie: ") }
-                appendLine(character?.species)
-
-                bold { append("Gender: ") }
-                appendLine(character?.gender)
-
-                bold { append("Origin name: ") }
-                appendLine(character?.origin?.name)
-
-                bold { append("Location name: ") }
-                appendLine(character?.location?.name)
-
-                bold { append("Created: ") }
-                appendLine(character?.created)
-
-                bold { append("Status: ") }
-                appendLine(character?.status)
-
-                bold { append("Specie: ") }
-                appendLine(character?.species)
-
-                bold { append("Gender: ") }
-                appendLine(character?.gender)
-
-                bold { append("Origin name: ") }
-                appendLine(character?.origin?.name)
-
-                bold { append("Location name: ") }
-                appendLine(character?.location?.name)
-
-                bold { append("Created: ") }
-                appendLine(character?.created)
+            appendInfo(R.string.status,character?.status )
+            appendInfo(R.string.specie,character?.species)
+            appendInfo(R.string.gender,character?.gender )
+            appendInfo(R.string.origin_name,character?.origin?.name )
+            appendInfo(R.string.location_name,character?.location?.name )
+            appendInfo(R.string.created,character?.created)
         }
     }
 
-
+   fun SpannableStringBuilder.appendInfo(resource: Int, value: String?){
+       bold { append(getString(resource))
+       }
+       appendLine(": $value")
+   }
 }
